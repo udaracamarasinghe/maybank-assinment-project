@@ -1,0 +1,3 @@
+curl first-client:noonewilleverguess@localhost:8084/oauth/token -dgrant_type=client_credentials -dscope=any
+
+curl -X POST localhost:8084/oauth/check_token -d "token=ba31d80f-5eb7-4037-b561-16406900b817"

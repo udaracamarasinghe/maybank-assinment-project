@@ -1,0 +1,77 @@
+version: '3.5'
+services:
+  mysql:
+    build: ./mysql-db
+    image: assesment-uca-mysql-db:latest
+    container_name: assesment-uca-mysql-db-container
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+    - 3406:3306
+    networks:
+    - backend
+  auth-server:
+   build: ./authorization-server
+   image: auth-server:latest
+   container_name: auth-server-container
+   restart: unless-stopped
+   command: sh -c 'chmod +x /wait-for-it.sh && /wait-for-it.sh mysql:3306 -- java -jar app.jar'
+   ports:
+   - 8809:8080
+   depends_on:
+   - mysql
+   links:
+   - mysql
+   networks:
+   - backend
+  category-management-service:
+    build: ./category-management-service
+    image: category-management-service:latest
+    container_name: category-management-service-container
+    restart: unless-stopped
+    command: sh -c 'chmod +x /wait-for-it.sh && /wait-for-it.sh mysql:3306 -- java -jar app.jar'
+    depends_on:
+    - mysql
+    ports:
+    - 8808:8080
+    links:
+    - mysql
+    networks:
+    - backend
+  merchant-management-service:
+    build: ./merchant-management-service
+    image: merchant-management-service:latest
+    container_name: merchant-management-service-container
+    restart: unless-stopped
+    command: sh -c 'chmod +x /wait-for-it.sh && /wait-for-it.sh mysql:3306 -- java -jar app.jar'
+    depends_on:
+    - mysql
+    ports:
+    - 8807:8080
+    links:
+    - mysql
+    networks:
+    - backend
+  product-management-service:
+    build: ./product-management-service
+    image: product-management-service:latest
+    container_name: product-management-service-container
+    restart: unless-stopped
+    command: sh -c 'chmod +x /wait-for-it.sh && /wait-for-it.sh mysql:3306 -- java -jar app.jar'
+    depends_on:
+    - mysql
+    - auth-server
+    - category-management-service
+    - merchant-management-service
+    ports:
+    - 8806:8080
+    links:
+    - mysql
+    - auth-server
+    - category-management-service
+    - merchant-management-service
+    networks:
+    - backend
+networks:
+  backend: null

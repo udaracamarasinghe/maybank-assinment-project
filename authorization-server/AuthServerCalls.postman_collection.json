@@ -1,0 +1,344 @@
+{
+	"info": {
+		"_postman_id": "ec9d8f23-72ac-47bc-bf58-5382ef2f9ff1",
+		"name": "AuthServerCalls",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "oauth/token with client_credentials",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "client_credentials-client",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "noonewilleverguess",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8084/oauth/token",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "oauth/check_token client_credentials",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "client_credentials-client",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "noonewilleverguess",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8084/oauth/check_token?token=9c9253f0-a70b-4a4c-8b7f-f6240936e1c0",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"oauth",
+						"check_token"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "9c9253f0-a70b-4a4c-8b7f-f6240936e1c0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "oauth/check_token db-client_credentials",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "test_secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "db_client_client-credintials",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8084/oauth/check_token?token=9c2c2ca6-74df-4f1e-850b-d533872edf42",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"oauth",
+						"check_token"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "9c2c2ca6-74df-4f1e-850b-d533872edf42"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "oauth/authorize authentication_code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/oauth/authorize?grant_type=authorization_code&response_type=code&client_id=authorization_code-client&state=1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"oauth",
+						"authorize"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "authorization_code"
+						},
+						{
+							"key": "response_type",
+							"value": "code"
+						},
+						{
+							"key": "client_id",
+							"value": "authorization_code-client"
+						},
+						{
+							"key": "state",
+							"value": "1234"
+						},
+						{
+							"key": "scope.resource:read",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/oauth/token password-client",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "noonewilleverguess",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "password-client",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "any",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "enduser",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8084/oauth/token",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/oauth/token db-password-client",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "test_secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "db-client-password-credentials",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "any",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "enduser",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8084/oauth/token",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8084/user-info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "9c2c2ca6-74df-4f1e-850b-d533872edf42",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8084/user-info",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"user-info"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
