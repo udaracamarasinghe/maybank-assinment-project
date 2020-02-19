@@ -1,241 +1,231 @@
 {
 	"info": {
-		"_postman_id": "1afc3c2c-d3e6-4bca-b801-c2362093ac1b",
-		"name": "assisment-requests",
+		"_postman_id": "b599f302-2ef4-4cbb-88ae-74bc698b2c5b",
+		"name": "maybank-assinment",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "db-one",
-			"item": [
-				{
-					"name": "db-one all customer query",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:8808/db-one-customer",
-							"host": [
-								"localhost"
-							],
-							"port": "8808",
-							"path": [
-								"db-one-customer"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "db-one customer query by ic",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:8808/db-one-customer/fcf56f6e4526514cb225e9a789783dc2d0df028b808dd81478237c7b10f8078c",
-							"host": [
-								"localhost"
-							],
-							"port": "8808",
-							"path": [
-								"db-one-customer",
-								"fcf56f6e4526514cb225e9a789783dc2d0df028b808dd81478237c7b10f8078c"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "db-one customer find by plain ic",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:8808/db-one-customer/find/testic1",
-							"host": [
-								"localhost"
-							],
-							"port": "8808",
-							"path": [
-								"db-one-customer",
-								"find",
-								"testic1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "db-one create customer",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"ic\": \"testic5\",\n    \"cxName\": \"Sam\",\n    \"cxAge\": 23,\n    \"cxDOB\": \"1990-02-02\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+			"name": "Get token ",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "password-credentials",
+							"type": "string"
 						},
-						"url": {
-							"raw": "localhost:8808/db-one-customer",
-							"host": [
-								"localhost"
-							],
-							"port": "8808",
-							"path": [
-								"db-one-customer"
-							]
+						{
+							"key": "password",
+							"value": "test_secret",
+							"type": "string"
 						}
-					},
-					"response": []
+					]
 				},
-				{
-					"name": "db-one delete customer by ic",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "localhost:8808/db-one-customer/fcf56f6e4526514cb225e9a789783dc2d0df028b808dd81478237c7b10f8078c",
-							"host": [
-								"localhost"
-							],
-							"port": "8808",
-							"path": [
-								"db-one-customer",
-								"fcf56f6e4526514cb225e9a789783dc2d0df028b808dd81478237c7b10f8078c"
-							]
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "any",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "enduser",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
 						}
-					},
-					"response": []
+					]
+				},
+				"url": {
+					"raw": "localhost:8809/oauth/token",
+					"host": [
+						"localhost"
+					],
+					"port": "8809",
+					"path": [
+						"oauth",
+						"token"
+					]
 				}
-			],
-			"protocolProfileBehavior": {}
+			},
+			"response": []
 		},
 		{
-			"name": "db-two",
-			"item": [
-				{
-					"name": "db-two all customer query",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:8808/db-two-customer",
-							"host": [
-								"localhost"
-							],
-							"port": "8808",
-							"path": [
-								"db-two-customer"
-							]
+			"name": "product search",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3ca7ba98-051d-42b4-9436-7a5af9b8488e",
+							"type": "string"
 						}
-					},
-					"response": []
+					]
 				},
-				{
-					"name": "db-two customer query by ic",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:8808/db-two-customer/a77499a9a1cc337ee78d6ab080c483d5d80e84cdefa66f0b9e44c374fe4ea8fa",
-							"host": [
-								"localhost"
-							],
-							"port": "8808",
-							"path": [
-								"db-two-customer",
-								"a77499a9a1cc337ee78d6ab080c483d5d80e84cdefa66f0b9e44c374fe4ea8fa"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "db-two customer find by plain ic",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:8808/db-two-customer/find/testic1",
-							"host": [
-								"localhost"
-							],
-							"port": "8808",
-							"path": [
-								"db-two-customer",
-								"find",
-								"testic1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "db-two create customer",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"ic\": \"testic1\",\n    \"cxName\": \"Sam\",\n    \"cxAge\": 23,\n    \"cxDOB\": \"1990-02-02\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8806/product/search?category=2&name=glittering red pump",
+					"host": [
+						"localhost"
+					],
+					"port": "8806",
+					"path": [
+						"product",
+						"search"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "2"
 						},
-						"url": {
-							"raw": "localhost:8808/db-two-customer",
-							"host": [
-								"localhost"
-							],
-							"port": "8808",
-							"path": [
-								"db-two-customer"
-							]
+						{
+							"key": "name",
+							"value": "glittering red pump"
 						}
-					},
-					"response": []
-				},
-				{
-					"name": "db-two delete customer by ic",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "localhost:8808/db-two-customer/a77499a9a1cc337ee78d6ab080c483d5d80e84cdefa66f0b9e44c374fe4ea8fa",
-							"host": [
-								"localhost"
-							],
-							"port": "8808",
-							"path": [
-								"db-two-customer",
-								"a77499a9a1cc337ee78d6ab080c483d5d80e84cdefa66f0b9e44c374fe4ea8fa"
-							]
-						}
-					},
-					"response": []
+					]
 				}
-			],
-			"protocolProfileBehavior": {}
+			},
+			"response": []
+		},
+		{
+			"name": "create product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3ca7ba98-051d-42b4-9436-7a5af9b8488e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\":\"title\",\n\t\"price\":455.89,\n\t\"msrp\": 90.99934333,\n\t\"isAvilable\":true,\n\t\"categoryId\":1,\n\t\"imageURL\":\"imageURL\",\n\t\"description\":\"description\",\n\t\"merchantId\":2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8806/product",
+					"host": [
+						"localhost"
+					],
+					"port": "8806",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3ca7ba98-051d-42b4-9436-7a5af9b8488e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8806/product/NA==",
+					"host": [
+						"localhost"
+					],
+					"port": "8806",
+					"path": [
+						"product",
+						"NA=="
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4a0e2e01-42e6-4235-ba9e-ffd1f47a0f49",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"productId\": \"NA==\",\n    \"title\": \"title1\",\n    \"price\": 7858.90,\n    \"msrp\": 344.93,\n    \"isAvilable\": false,\n    \"description\": \"des12cription\",\n    \"imageURL\": \"imageURLe\",\n    \"productPageUrl\": null,\n\t\"categoryId\":3,\n\t\"merchantId\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/product",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
