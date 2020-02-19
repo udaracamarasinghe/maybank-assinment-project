@@ -14,7 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.uca.categorymgr.utili.apis.BaseRestAPIRespose;
+import com.uca.categorymgr.apis.responses.BaseRestAPIRespose;
 import com.uca.categorymgr.utili.apis.ErrorDetails;
 
 public class FilterChainExceptionHandlerFilter extends OncePerRequestFilter {

@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Category {
@@ -14,7 +15,8 @@ public class Category {
 
 	private String name;
 
-	private Long parentCatId;
+	@ManyToOne
+	private Category parentCatId;
 
 	public Long getCatId() {
 		return catId;
@@ -32,11 +34,11 @@ public class Category {
 		this.name = name;
 	}
 
-	public Long getParentCatId() {
+	public Category getParentCatId() {
 		return parentCatId;
 	}
 
-	public void setParentCatId(Long parentCatId) {
+	public void setParentCatId(Category parentCatId) {
 		this.parentCatId = parentCatId;
 	}
 

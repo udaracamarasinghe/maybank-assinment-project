@@ -5,7 +5,7 @@ package com.uca.categorymgr.utili.services;
  * @author Udara Amarasinghe
  *
  */
-public class DeleteCustomerServiceResponse {
+public class DeleteProductServiceResponse {
 
 	public enum Status {
 		SUCCESS, NOT_EXISTS
@@ -14,12 +14,6 @@ public class DeleteCustomerServiceResponse {
 	private Status status;
 
 	private String message;
-
-	public DeleteCustomerServiceResponse(Status status, String message) {
-		super();
-		this.status = status;
-		this.message = message;
-	}
 
 	public Status getStatus() {
 		return status;

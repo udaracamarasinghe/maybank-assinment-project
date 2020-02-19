@@ -29,7 +29,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	@Override
 	public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
 		RemoteTokenServices tokenServices = new RemoteTokenServices();
-		tokenServices.setClientId("db_client_client-credintials");
+		tokenServices.setClientId("client-credintials");
 		tokenServices.setClientSecret("test_secret");
 		tokenServices.setCheckTokenEndpointUrl(tokenEndPointURL + "/oauth/check_token");
 

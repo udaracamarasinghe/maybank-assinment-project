@@ -1,9 +1,6 @@
 package com.uca.categorymgr.dtos;
 
-import java.util.Date;
-
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * 
@@ -12,46 +9,34 @@ import javax.validation.constraints.NotNull;
  */
 public class CategoryDto {
 
-	@NotNull
-	@NotEmpty
-	private String ic;
+	private Long catId;
 
-	private String cxName;
+	private String name;
 
-	private Integer cxAge;
+	private CategoryDto parentCatId;
 
-	private Date cxDOB;
-
-	public String getIc() {
-		return ic;
+	public Long getCatId() {
+		return catId;
 	}
 
-	public void setIc(String ic) {
-		this.ic = ic;
+	public void setCatId(Long catId) {
+		this.catId = catId;
 	}
 
-	public String getCxName() {
-		return cxName;
+	public String getName() {
+		return name;
 	}
 
-	public void setCxName(String cxName) {
-		this.cxName = cxName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public Integer getCxAge() {
-		return cxAge;
+	public CategoryDto getParentCatId() {
+		return parentCatId;
 	}
 
-	public void setCxAge(Integer cxAge) {
-		this.cxAge = cxAge;
-	}
-
-	public Date getCxDOB() {
-		return cxDOB;
-	}
-
-	public void setCxDOB(Date cxDOB) {
-		this.cxDOB = cxDOB;
+	public void setParentCatId(CategoryDto parentCatId) {
+		this.parentCatId = parentCatId;
 	}
 
 }

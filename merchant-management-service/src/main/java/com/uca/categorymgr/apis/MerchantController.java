@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.uca.categorymgr.dtos.CategoryDto;
-import com.uca.categorymgr.services.CategoryService;
+import com.uca.categorymgr.dtos.MerchantDto;
+import com.uca.categorymgr.services.MerchantService;
 
 /**
  * 
@@ -17,18 +17,18 @@ import com.uca.categorymgr.services.CategoryService;
  *
  */
 @RestController
-@RequestMapping("/category")
-public class CategoryController {
+@RequestMapping("/merchant")
+public class MerchantController {
 
 	@Autowired
-	private CategoryService categoryService;
+	private MerchantService merchantService;
 
 	@Cacheable("isavilable")
-	@GetMapping("/isavilable/{catid}")
-	public ResponseEntity<?> isavilable(@PathVariable("catid") String catid) {
-
-		Long catId = Long.valueOf(catid);
-		Boolean avilable_ = categoryService.isavilable(catId);
+	@GetMapping("/isavilable/{merid}")
+	public ResponseEntity<?> isavilable(@PathVariable("merid") String merid) {
+		Long merId = Long.valueOf(merid);
+		
+		Boolean avilable_ = merchantService.isavilable(merId);
 
 		return ResponseEntity.ok(new Object() {
 			public Boolean avilable = avilable_;
@@ -36,11 +36,11 @@ public class CategoryController {
 	}
 
 	@Cacheable("getById")
-	@GetMapping("/{catid}")
-	public ResponseEntity<?> getById(@PathVariable("catid") String catid) {
+	@GetMapping("/{merid}")
+	public ResponseEntity<?> getById(@PathVariable("merid") String merid) {
 
-		Long catId = Long.valueOf(catid);
-		CategoryDto categoryDto = categoryService.findCategoryById(catId);
+		Long merId = Long.valueOf(merid);
+		MerchantDto categoryDto = merchantService.findMerchantById(merId);
 
 		return ResponseEntity.ok(categoryDto);
 	}

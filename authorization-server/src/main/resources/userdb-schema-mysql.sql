@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `authorities` (
 
 
 INSERT INTO users (username, password ,enabled)  
-SELECT 'enduser','{bcrypt}$2y$12$sIxZxjgCIZAvW0xXlHrBmejrhsPa6u0mYDFTmUHgQsUxsFKscEXk.',true
+SELECT 'enduser','{bcrypt}$2y$12$xGIt189BySSQDb1U84VuvOkUqaA.8DdaqqRo7R/gqply/VBcD9lCq',true
 WHERE NOT EXISTS (SELECT username FROM users WHERE username='enduser')
 ;
 

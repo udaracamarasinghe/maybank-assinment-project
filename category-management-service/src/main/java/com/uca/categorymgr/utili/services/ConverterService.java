@@ -4,8 +4,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.uca.categorymgr.dtos.CustomerDto;
-import com.uca.categorymgr.entities.DBOneCustomer;
+import com.uca.categorymgr.dtos.CategoryDto;
+import com.uca.categorymgr.entities.Category;
 
 /**
  * 
@@ -18,16 +18,10 @@ public class ConverterService {
 	@Autowired
 	private ModelMapper modelMapper;
 
-	public CustomerDto convertToDtoDBOne(DBOneCustomer post) {
-		CustomerDto customerDto = modelMapper.map(post, CustomerDto.class);
-		// customerDto.setSubmissionDate(post.getSubmissionDate(),
-		// userService.getCurrentUser().getPreference().getTimezone());
-		return customerDto;
-	}
+	public CategoryDto convert(Category post) {
+		CategoryDto customerDto = modelMapper.map(post, CategoryDto.class);
 
-	public DBOneCustomer convertToDtoDBOne(CustomerDto makeCustomer) {
-		DBOneCustomer customer = modelMapper.map(makeCustomer, DBOneCustomer.class);
-		return customer;
+		return customerDto;
 	}
 
 }

@@ -3,12 +3,11 @@ package com.uca.categorymgr.services;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.uca.categorymgr.dtos.CategoryDto;
-import com.uca.categorymgr.entities.Category;
-import com.uca.categorymgr.repositories.CategoryRepository;
+import com.uca.categorymgr.dtos.MerchantDto;
+import com.uca.categorymgr.entities.Merchant;
+import com.uca.categorymgr.repositories.MerchantRepository;
 import com.uca.categorymgr.utili.services.ConverterService;
 import com.uca.categorymgr.utili.services.HashingService;
 
@@ -18,20 +17,23 @@ import com.uca.categorymgr.utili.services.HashingService;
  *
  */
 @Service
-public class CategoryService {
+public class MerchantService {
 
 	@Autowired
-	private CategoryRepository categoryRepository;
+	private MerchantRepository merchantRepository;
 
 	@Autowired
 	private ConverterService converterService;
 
-	public Boolean isavilable(Long catid) {
-		return categoryRepository.existsById(catid);
+	@Autowired
+	private HashingService hashingService;
+
+	public Boolean isavilable(Long merId) {
+		return merchantRepository.existsById(merId);
 	}
 
-	public CategoryDto findCategoryById(Long id) {
-		Optional<Category> findById = categoryRepository.findById(id);
+	public MerchantDto findMerchantById(Long merId) {
+		Optional<Merchant> findById = merchantRepository.findById(merId);
 
 		if (!findById.isPresent()) {
 			return null;

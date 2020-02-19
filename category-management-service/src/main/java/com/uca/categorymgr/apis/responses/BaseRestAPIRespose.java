@@ -1,4 +1,4 @@
-package com.uca.categorymgr.utili.apis;
+package com.uca.categorymgr.apis.responses;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

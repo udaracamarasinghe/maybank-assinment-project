@@ -72,9 +72,11 @@ create table if not exists ClientDetails (
 
 INSERT INTO oauth_client_details
 (client_id, resource_ids, client_secret, scope, authorized_grant_types, web_server_redirect_uri, authorities, access_token_validity, refresh_token_validity, additional_information, autoapprove)
-VALUES('db_client_client-credintials', '', '{bcrypt}$2y$12$sIxZxjgCIZAvW0xXlHrBmejrhsPa6u0mYDFTmUHgQsUxsFKscEXk.', 'any', 'client_credentials',  '', '', 10000, 10000, '{}', true);
+SELECT 'client-credintials', '', '{bcrypt}$2y$12$sIxZxjgCIZAvW0xXlHrBmejrhsPa6u0mYDFTmUHgQsUxsFKscEXk.', 'any', 'client_credentials',  '', '', 10000, 10000, '{}', true
+WHERE NOT EXISTS (select client_id from oauth_client_details WHERE client_id = 'client-credintials'); ;
 
 
 INSERT INTO oauth_client_details
 (client_id, resource_ids, client_secret, scope, authorized_grant_types, web_server_redirect_uri, authorities, access_token_validity, refresh_token_validity, additional_information, autoapprove)
-VALUES('db-client-password-credentials', '', '{bcrypt}$2y$12$sIxZxjgCIZAvW0xXlHrBmejrhsPa6u0mYDFTmUHgQsUxsFKscEXk.', 'any', 'password', '', '', 10000, 10000, '{}', true);
+SELECT 'password-credentials', '', '{bcrypt}$2y$12$sIxZxjgCIZAvW0xXlHrBmejrhsPa6u0mYDFTmUHgQsUxsFKscEXk.', 'any', 'password', '', '', 10000, 10000, '{}', true
+WHERE NOT EXISTS (select client_id from oauth_client_details WHERE client_id = 'password-credentials'); 

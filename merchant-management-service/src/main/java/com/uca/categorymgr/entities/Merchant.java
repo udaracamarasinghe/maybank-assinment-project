@@ -6,22 +6,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Category {
+public class Merchant {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long catId;
+	private Long merId;
 
 	private String name;
 
-	private Long parentCatId;
-
-	public Long getCatId() {
-		return catId;
+	public Long getMerId() {
+		return merId;
 	}
 
-	public void setCatId(Long catId) {
-		this.catId = catId;
+	public void setMerId(Long merId) {
+		this.merId = merId;
 	}
 
 	public String getName() {
@@ -30,14 +28,6 @@ public class Category {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public Long getParentCatId() {
-		return parentCatId;
-	}
-
-	public void setParentCatId(Long parentCatId) {
-		this.parentCatId = parentCatId;
 	}
 
 }
