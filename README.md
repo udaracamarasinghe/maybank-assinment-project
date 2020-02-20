@@ -28,7 +28,7 @@ Execute ./run.sh shell script(This will build all spring-boot applications and s
 
 # How to test
 
-Import Postman file (assisment-requests.postman_collection.json) into Postman.
+Import postman test script json file which located in root of application directory (assisment-requests.postman_collection.json) into Postman.
 
 This file included all rest calls(Token generate, search by name, create a product, update product and delete product)
 
