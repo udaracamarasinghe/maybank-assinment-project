@@ -1,22 +1,20 @@
-# maybank-assinment-project
+# Maybank-assignment-project
 
-*Springboot application *Micorservice archecture 
+*Springboot application *Microservice architecture 
 
 #run options
+Can run as an ordinary spring-boot application or as docker swarm cluster
 
+#To run as an ordinary spring-boot application
 Install JDK 8 or upper
-Install MySQL if not using docker
+Install MySQL
+Startup each app manually
 
-Install docker(Optinal)
+#To run as docker swarm cluster
+Install docker
+Enable docker swarm
+Execute ./run.sh shell script(This will build all spring-boot applications and start docker swam and deploy all applications.)
 
-#run with docker.
-
-run shell script ./run
-This will build all springboot applications and start dockerswam and deploy all applications.
-Import Postman script file into Postman.
-
-First call token generate API
-POST localhost:8809/oauth/token
-
-
-
+#Test
+Import Postman file(assisment-requests.postman_collection.json) into Postman.
+This file included all rest calls(Token generate, search by name, create a product, update product and delete product)
