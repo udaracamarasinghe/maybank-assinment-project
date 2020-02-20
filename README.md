@@ -24,7 +24,21 @@ Install JDK 8 or upper
 
 Install MySQL
 
-Startup each app manually
+Configure datasource connection properties accordingly
+
+	spring.datasource.url=jdbc:mysql://localhost:3306/product_db?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
+
+	spring.datasource.username=username
+	spring.datasource.password=password
+	
+Configure endpoint host URLs for auth-server, categoryservice and merchantservice accordingly
+	
+	token.endpoint.url=http://localhost:8080
+
+	categoryservice.host=http://localhost:8080
+	merchantservice.host=http://localhost:8080
+
+Startup each springboot application individualy.
 
 # To run as docker swarm cluster
 
