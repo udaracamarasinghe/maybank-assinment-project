@@ -1,4 +1,4 @@
-# Maybank-assignment-project
+# Brief
 
  Framework: Springboot
  
@@ -8,7 +8,9 @@
 
 # Possible options to run the application
 
-Can run as an ordinary spring-boot application or as docker swarm cluster
+Can run as an ordinary spring-boot applications or as docker swarm cluster.
+
+If you select to run as ordinary spring-boot applications it will have to configure database connections manually. 
 
 # To run as an ordinary spring-boot application
 
@@ -30,7 +32,7 @@ Execute ./run.sh shell script(This will build all spring-boot applications and s
 
 Import postman test script json file which located in root of application directory (assisment-requests.postman_collection.json) into Postman.
 
-This file included all rest calls(Token generate, search by name, create a product, update product and delete product)
+This file included all rest API calls(Token generate, search by name, create a product, update product and delete product)
 
 # Diagrams
 
