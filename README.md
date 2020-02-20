@@ -1,8 +1,10 @@
 # Maybank-assignment-project
 
-Framework: Springboot
-Architecture: Microservice architecture
-Modules: authorization-server, category-management-service, merchant-management-service and product-management-service
+ Framework: Springboot
+ 
+ Architecture: Microservice architecture
+ 
+ Modules: authorization-server, category-management-service, merchant-management-service and product-management-service
 
 # Possible options to run the application
 
