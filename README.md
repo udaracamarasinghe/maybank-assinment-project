@@ -19,4 +19,6 @@ Execute ./run.sh shell script(This will build all spring-boot applications and s
 Import Postman file(assisment-requests.postman_collection.json) into Postman.
 This file included all rest calls(Token generate, search by name, create a product, update product and delete product)
 
-Class diagram: https://github.com/udaracamarasinghe/maybank-assinment-project/blob/master/diagrams/Class%20Diagram.jpg
+High level Class diagram: https://github.com/udaracamarasinghe/maybank-assinment-project/blob/master/diagrams/Class%20Diagram.jpg
+
+High level search product activity diagram: https://github.com/udaracamarasinghe/maybank-assinment-project/blob/master/diagrams/Activity%20Diagram.jpg
