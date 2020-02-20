@@ -6,6 +6,7 @@
 Can run as an ordinary spring-boot application or as docker swarm cluster
 
 #To run as an ordinary spring-boot application
+
 Install JDK 8 or upper
 Install MySQL
 Startup each app manually
