@@ -1,8 +1,10 @@
 # Maybank-assignment-project
 
-*Springboot application *Microservice architecture 
+Framework: Springboot
+Architecture: Microservice architecture
+Modules: authorization-server, category-management-service, merchant-management-service and product-management-service
 
-# run options
+# Possible options to run the application
 
 Can run as an ordinary spring-boot application or as docker swarm cluster
 
@@ -22,6 +24,8 @@ Execute ./run.sh shell script(This will build all spring-boot applications and s
 
 Import Postman file(assisment-requests.postman_collection.json) into Postman.
 This file included all rest calls(Token generate, search by name, create a product, update product and delete product)
+
+# Diagrams
 
 High level Class diagram: https://github.com/udaracamarasinghe/maybank-assinment-project/blob/master/diagrams/Class%20Diagram.jpg
 
