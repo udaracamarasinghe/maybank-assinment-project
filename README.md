@@ -52,7 +52,7 @@ Execute ./run.sh shell script(This will build all spring-boot applications and s
 
 # How to test
 
-Import postman test script JSON file which located in the root of the application directory into Postman.
+Import postman test script JSON file into POSTMAN, which located in the root of the application directory.
    
 	assisment-requests.postman_collection.json
 
