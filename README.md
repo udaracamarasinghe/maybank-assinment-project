@@ -40,7 +40,7 @@ Import postman test script json file which located in root of application direct
    
 	assisment-requests.postman_collection.json
 
-This file included all rest API calls for Generate token, to search by name or category id, to create a product, to update a product and to delete a product.
+This file included all rest API calls for Generate auth token, to search by name or category id, to create a product, to update a product and to delete a product.
 
 # Diagrams
 
