@@ -2,9 +2,15 @@
 
  Framework: Springboot
  
+ DB: MySQL
+ 
+ Server: Embedded Tomcat 
+ 
  Architecture: Microservice architecture
  
  Modules: authorization-server, category-management-service, merchant-management-service and product-management-service
+ 
+ Functionalities: Create product, Search product, Update product and Delete product
 
 # Possible options to run the application
 
