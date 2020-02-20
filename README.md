@@ -24,6 +24,8 @@ If you select to run as ordinary spring-boot applications it will have to config
 
 Install JDK 8 or upper
 
+Install Maven
+
 Install MySQL
 
 Configure Datasource connection properties accordingly
@@ -40,9 +42,11 @@ Configure endpoint host URLs for auth-server, category service and merchant serv
 	categoryservice.host=http://localhost:8080
 	merchantservice.host=http://localhost:8080
 
-Startup each spring-boot application individually.
+Build and startup each spring-boot application individually.
 
 # To run as docker swarm cluster
+
+Install Maven
 
 Install docker
 
